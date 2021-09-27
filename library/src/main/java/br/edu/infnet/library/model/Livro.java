@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Livro {
@@ -13,8 +14,13 @@ public class Livro {
 	private Integer codigo_livro;
 	
 	private String titulo_livro;
+	
+	@ManyToMany
 	private String autor_livro;
+	
+	@ManyToMany
 	private String categoria_livro;
+	
 	private Date data_publicacao;
 	
 	public Livro() {
