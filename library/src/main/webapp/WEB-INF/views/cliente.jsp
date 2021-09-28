@@ -40,11 +40,61 @@
           <li><a href="/" class="nav-link px-2 text-white">Início</a></li>
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-secondary">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Alugar</a></li>
         </ul>
       </div>
     </div>
   </header>
 </main>
+
+	<div class="container" id="containerInicial">
+
+		<div class="d-flex justify-content-between">
+			<h1>Lista de Clientes</h1>
+			<h3>
+				<a class="btn btn-primary" href='<c:url value="/cliente/cadastro/form" /> ' > Cadastrar cliente</a>
+			</h3>
+		</div>
+
+		<table class="table table-striped">
+
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Nome</th>
+					<th>Endereço</th>
+					<th>Telefone</th>
+					<th>Email</th>
+					<th>#</th>
+				</tr>
+
+			</thead>
+
+			<tbody>
+			  	 <c:forEach var="cliente" items="${clientes}" >   
+						<tr>
+							<td> ${cliente.codigo_cliente}  </td>
+							<td>${cliente.nome}</td>
+							<td>${cliente.endereco}</td>
+							<td>${cliente.telefone}</td>
+							<td>${cliente.email}</td>
+							<td>
+							
+							<a href='<c:url value="/cliente/cadastro/edit/${cliente.codigo_cliente}" />' >
+							    <button class="btn btn-primary" type="button" >Editar</button>
+							</a> 
+							
+							<a href='<c:url value="/cliente/cadastro/delete/${cliente.codigo_cliente}" />' >
+							    <button class="btn btn-danger" type="button" >Excluir</button>
+							</a>
+							
+							</td>
+						</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+
 
 
 

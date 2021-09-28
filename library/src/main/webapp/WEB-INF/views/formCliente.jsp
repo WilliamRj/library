@@ -38,8 +38,8 @@
 		<h3 class="float-md-start mb-0">Livraria PW&nbsp;&nbsp;&nbsp;&nbsp;</h3>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/" class="nav-link px-2 text-white">Início</a></li>
-          <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
-          <li><a href="/livro/cadastro" class="nav-link px-2 text-secondary">Gerenciar Livro</a></li>
+          <li><a href="/cliente/cadastro" class="nav-link px-2 text-secondary">Gerenciar Cliente</a></li>
+          <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Alugar</a></li>
         </ul>
       </div>
@@ -47,6 +47,66 @@
   </header>
 </main>
 
+<div class="container" id="containerInicial">
+
+
+		<h2>Cadastro de clientes</h2>
+
+		<form action='<c:url value="/cliente/salvar" /> ' method="post">
+
+			<div class="form-group">
+			
+				<label for="nome">Nome</label> 
+				
+				<input
+					type="text" class="form-control" id="nome"
+					placeholder="Informe o nome" name="nome">
+			
+			</div>
+			
+			<div class="form-group">
+			
+				<label for="endereco">Endereço</label> 
+				
+				<input
+					type="text" class="form-control" id="endereco"
+					placeholder="Informe o endereço" name="endereco">
+			
+			</div>
+			
+			<div class="form-group">
+			
+				<label for="email">Telefone</label> 
+				
+				<input
+					type="text" class="form-control" id="telefone"
+					placeholder="Informe o telefone" name="telefone">
+			
+			</div>
+
+			<div class="form-group">
+			
+				<label for="email">Email</label> 
+				
+				<input
+					type="email" class="form-control" id="email"
+					placeholder="Informe o email" name="email">
+			
+			</div>
+			
+			<hr>
+			 
+			<input type="submit" class="btn btn-primary" value="Salvar" />
+			
+			<a  class="btn btn-secondary" href='<c:url value="/cliente/cadastro/" />' >			
+			  	<i class="fa fa-chevron-circle-left" aria-hidder="true" ></i>			
+				 Voltar
+			 </a>
+
+
+		</form>
+
+	</div>
 
 
 

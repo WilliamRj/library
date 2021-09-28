@@ -40,6 +40,7 @@
           <li><a href="/" class="nav-link px-2 text-secondary">Início</a></li>
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Alugar</a></li>
         </ul>
       </div>
     </div>
@@ -51,7 +52,7 @@
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">Hello, world!</h1>
-          <p>Esse é o protótipo de um programa de Livraria feito para avaliação do módulo de Persistência e MVC do Bloco D e ministrada pelo professor Veloso. A Pós-graduação De Engenharia de Software é ofereciada pelo Instituto Infnet.</p>
+          <p>Esse é o protótipo de um programa de Livraria feito para avaliação do módulo de Persistência e MVC do Bloco D e ministrado pelo professor Veloso. A Pós-graduação de Engenharia de Software é ofereciada pelo Instituto Infnet.</p>
           <p><a class="btn btn-primary btn-lg" href="https://www.infnet.edu.br/esti/proposta-mit-em-engenharia-de-software-com-java/" role="button">Saiba mais &raquo;</a></p>      
         </div>
       </div>

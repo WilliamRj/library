@@ -27,11 +27,13 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public Integer getCodigo() {
+
+
+	public Integer getCodigo_cliente() {
 		return codigo_cliente;
 	}
 
-	public void setCodigo(Integer codigo_cliente) {
+	public void setCodigo_cliente(Integer codigo_cliente) {
 		this.codigo_cliente = codigo_cliente;
 	}
 
