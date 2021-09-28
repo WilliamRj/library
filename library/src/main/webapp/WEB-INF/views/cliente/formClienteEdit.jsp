@@ -62,7 +62,7 @@
 				
 				<input
 					type="text" class="form-control" id="nome"
-					placeholder="Informe o nome" name="nome" value="${cliente.nome}">
+					placeholder="Informe o nome" name="nome" value="${cliente.nome}" required>
 			
 			</div>
 			
@@ -72,7 +72,7 @@
 				
 				<input
 					type="text" class="form-control" id="endereco"
-					placeholder="Informe o endereço" name="endereco" value="${cliente.endereco}">
+					placeholder="Informe o endereço" name="endereco" value="${cliente.endereco}" required>
 			
 			</div>
 			
@@ -82,7 +82,7 @@
 				
 				<input
 					type="text" class="form-control" id="telefone"
-					placeholder="Informe o telefone" name="telefone" value="${cliente.telefone}">
+					placeholder="Informe o telefone" name="telefone" value="${cliente.telefone}" required>
 			
 			</div>
 
@@ -92,7 +92,7 @@
 				
 				<input
 					type="email" class="form-control" id="email"
-					placeholder="Informe o email" name="email" value="${cliente.email}">
+					placeholder="Informe o email" name="email" value="${cliente.email}" required>
 			
 			</div>
 			

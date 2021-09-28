@@ -60,7 +60,7 @@
 				
 				<input
 					type="text" class="form-control" id="nome"
-					placeholder="Informe o nome" name="nome">
+					placeholder="Informe o nome" name="nome" required>
 			
 			</div>
 			
@@ -70,7 +70,7 @@
 				
 				<input
 					type="text" class="form-control" id="endereco"
-					placeholder="Informe o endereço" name="endereco">
+					placeholder="Informe o endereço" name="endereco" required>
 			
 			</div>
 			
@@ -80,7 +80,7 @@
 				
 				<input
 					type="text" class="form-control" id="telefone"
-					placeholder="Informe o telefone" name="telefone">
+					placeholder="Informe o telefone" name="telefone" required>
 			
 			</div>
 
@@ -90,7 +90,7 @@
 				
 				<input
 					type="email" class="form-control" id="email"
-					placeholder="Informe o email" name="email">
+					placeholder="Informe o email" name="email" required>
 			
 			</div>
 			

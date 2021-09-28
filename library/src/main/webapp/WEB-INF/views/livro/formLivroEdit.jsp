@@ -62,7 +62,7 @@
 				
 				<input
 					type="text" class="form-control" id="titulo_livro"
-					placeholder="Informe o titulo do livro" name="titulo_livro" value="${livro.titulo_livro}">
+					placeholder="Informe o titulo do livro" name="titulo_livro" value="${livro.titulo_livro}" required>
 			
 			</div>
 			
@@ -72,7 +72,7 @@
 				
 				<input
 					type="text" class="form-control" id="autor_livro"
-					placeholder="Informe o autor do livro" name="autor_livro" value="${livro.autor_livro}">
+					placeholder="Informe o autor do livro" name="autor_livro" value="${livro.autor_livro}" required>
 			
 			</div>
 
@@ -82,7 +82,7 @@
 				
 				<input
 					type="text" class="form-control" id="categoria_livro"
-					placeholder="Informe a categoria do livro" name="categoria_livro" value="${livro.categoria_livro}">
+					placeholder="Informe a categoria do livro" name="categoria_livro" value="${livro.categoria_livro}" required>
 			
 			</div>
 			
@@ -92,7 +92,7 @@
 				
 				<input
 					type="date" class="form-control" id="data_publicacao"
-					placeholder="Informe a data de publicação" name="data_publicacao" value="${livro.data_publicacao}">
+					placeholder="Informe a data de publicação" name="data_publicacao" value="${livro.data_publicacao}" required>
 			
 			</div>
 			
