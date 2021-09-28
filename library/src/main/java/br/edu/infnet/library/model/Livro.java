@@ -15,10 +15,10 @@ public class Livro {
 	
 	private String titulo_livro;
 	
-	@ManyToMany
+	/**@ManyToMany*/
 	private String autor_livro;
 	
-	@ManyToMany
+	/**@ManyToMany*/
 	private String categoria_livro;
 	
 	private Date data_publicacao;

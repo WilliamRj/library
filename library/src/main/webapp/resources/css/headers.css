@@ -1,5 +1,19 @@
 @charset "ISO-8859-1";
 
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+.jumbotron {
+  padding-top: 3.5rem;
+}
+
+#footerInicial{
+	padding-top: 5.5rem;
+	text-align: center;
+}
+
+#containerInicial{
+	padding-top: 4.5rem;
+}
+
 .b-example-divider {
   height: 3rem;
   background-color: rgba(0, 0, 0, .1);

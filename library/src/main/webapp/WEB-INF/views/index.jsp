@@ -31,20 +31,56 @@
 
 <main>
   <header class="p-3 bg-dark text-white">
-    <div class="container">
+    <div class="container d-flex justify-content-center">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">        
 		<svg class="bi bi-book" width="40" height="32" role="img" fill="currentColor"><use xlink:href="#icone"/></svg>
-
+		<h3 class="float-md-start mb-0">Livraria PW&nbsp;&nbsp;&nbsp;&nbsp;</h3>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/" class="nav-link px-2 text-secondary">Início</a></li>
-          <li><a href="/cliente" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
-          <li><a href="/livro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
+          <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
+          <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
         </ul>
       </div>
     </div>
   </header>
+  
+  <p>
+  
+       <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Hello, world!</h1>
+          <p>Esse é o protótipo de um programa de Livraria feito para avaliação do módulo de Persistência e MVC do Bloco D e ministrada pelo professor Veloso. A Pós-graduação De Engenharia de Software é ofereciada pelo Instituto Infnet.</p>
+          <p><a class="btn btn-primary btn-lg" href="https://www.infnet.edu.br/esti/proposta-mit-em-engenharia-de-software-com-java/" role="button">Saiba mais &raquo;</a></p>      
+        </div>
+      </div>
+		<hr>
+      <div class="container" id="containerInicial">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Java</h2>
+            <p>Java é uma linguagem de programação orientada a objetos desenvolvida na década de 90 por uma equipe de programadores chefiada por James Gosling, na empresa Sun Microsystems. Em 2008 o Java foi adquirido pela empresa Oracle Corporation. </p>
+            <p><a class="btn btn-secondary" href="https://www.java.com/pt-BR/" role="button">Ver detalhes &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Spring Boot</h2>
+            <p>O Spring Boot é um framework Java open source que tem como objetivo facilitar esse processo em aplicações Java. Consequentemente, ele traz mais agilidade para o processo de desenvolvimento, uma vez que devs conseguem reduzir o tempo gasto com as configurações iniciais. </p>
+            <p><a class="btn btn-secondary" href="https://spring.io/" role="button">Ver detalhes &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Bootstrap</h2>
+            <p>Bootstrap é um framework web com código-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicações web usando HTML, CSS e JavaScript, baseado em modelos de design para a tipografia, melhorando a experiência do usuário em um site amigável e responsivo. </p>
+            <p><a class="btn btn-secondary" href="https://getbootstrap.com/" role="button">Ver detalhes &raquo;</a></p>
+          </div>
+        </div>
+        
+    <footer class="container" id="footerInicial">
+      <p>&copy; Livraria PW em Java, Spring Boot e Bootstrap - Paulo e William</p>
+    </footer>
+
+      </div> <!-- /container -->
 </main>
 
 <!-- Optional JavaScript; choose one of the two! -->	
