@@ -1,11 +1,13 @@
 package br.edu.infnet.library.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Livro {
@@ -21,13 +23,15 @@ public class Livro {
 	/**@ManyToMany*/
 	private String categoria_livro;
 	
-	private Date data_publicacao;
+	/**@DateTimeFormat(pattern="dd/MM/yyyy")*/
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate data_publicacao;
 	
 	public Livro() {
 		
 	}
 
-	public Livro(String titulo_livro, String autor_livro, String categoria_livro, Date data_publicacao) {
+	public Livro(String titulo_livro, String autor_livro, String categoria_livro, LocalDate data_publicacao) {
 		super();
 		this.titulo_livro = titulo_livro;
 		this.autor_livro = autor_livro;
@@ -67,11 +71,11 @@ public class Livro {
 		this.categoria_livro = categoria_livro;
 	}
 
-	public Date getData_publicacao() {
+	public LocalDate getData_publicacao() {
 		return data_publicacao;
 	}
 
-	public void setData_publicacao(Date data_publicacao) {
+	public void setData_publicacao(LocalDate data_publicacao) {
 		this.data_publicacao = data_publicacao;
 	}	
 

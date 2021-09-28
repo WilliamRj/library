@@ -76,7 +76,7 @@
 			
 			<div class="form-group">
 			
-				<label for="email">Telefone</label> 
+				<label for="telefone">Telefone</label> 
 				
 				<input
 					type="text" class="form-control" id="telefone"

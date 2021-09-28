@@ -50,49 +50,47 @@
 <div class="container" id="containerInicial">
 
 
-		<h2>Editar o cliente: ${cliente.nome}</h2>
+		<h2>Cadastro de livros</h2>
 
-		<form action='<c:url value="/cliente/salvar" /> ' method="post">
-		
-		<input type="hidden" name="codigo_cliente" value="${cliente.codigo_cliente}" >
+		<form action='<c:url value="/livro/salvar" /> ' method="post">
 
 			<div class="form-group">
 			
-				<label for="nome">Nome</label> 
+				<label for="titulo_livro">Título</label> 
 				
 				<input
-					type="text" class="form-control" id="nome"
-					placeholder="Informe o nome" name="nome" value="${cliente.nome}">
+					type="text" class="form-control" id="titulo_livro"
+					placeholder="Informe o titulo do livro" name="titulo_livro">
 			
 			</div>
 			
 			<div class="form-group">
 			
-				<label for="endereco">Endereço</label> 
+				<label for="autor_livro">Autor</label> 
 				
 				<input
-					type="text" class="form-control" id="endereco"
-					placeholder="Informe o endereço" name="endereco" value="${cliente.endereco}">
+					type="text" class="form-control" id="autor_livro"
+					placeholder="Informe o autor do livro" name="autor_livro">
 			
 			</div>
 			
 			<div class="form-group">
 			
-				<label for="email">Telefone</label> 
+				<label for="categoria_livro">Categoria</label> 
 				
 				<input
-					type="text" class="form-control" id="telefone"
-					placeholder="Informe o telefone" name="telefone" value="${cliente.telefone}">
+					type="text" class="form-control" id="categoria_livro"
+					placeholder="Informe a categoria do livro" name="categoria_livro">
 			
 			</div>
 
 			<div class="form-group">
 			
-				<label for="email">Email</label> 
+				<label for="data_publicacao">Data de Publicação</label> 
 				
 				<input
-					type="email" class="form-control" id="email"
-					placeholder="Informe o email" name="email" value="${cliente.email}">
+					type="date" class="form-control" id="data_publicacao"
+					placeholder="Informe a data de publicação" name="data_publicacao">
 			
 			</div>
 			
@@ -100,7 +98,7 @@
 			 
 			<input type="submit" class="btn btn-primary" value="Salvar" />
 			
-			<a  class="btn btn-secondary" href='<c:url value="/cliente/cadastro/" />' >			
+			<a  class="btn btn-secondary" href='<c:url value="/livro/cadastro/" />' >			
 			  	<i class="fa fa-chevron-circle-left" aria-hidder="true" ></i>			
 				 Voltar
 			 </a>

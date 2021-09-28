@@ -24,12 +24,12 @@ public class ClienteController {
 	public String listaClientes(Model model) {
 		List<Cliente> clientes =  clienteService.listAll();
 		model.addAttribute("clientes", clientes);
-		return "/cliente";
+		return "/cliente/cliente";
 	}
 	
 	@RequestMapping(value="/cadastro/form", method = RequestMethod.GET)
 	public String cadastroForm() {
-		return "/formCliente";
+		return "/cliente/formCliente";
 	}
 
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
@@ -47,7 +47,7 @@ public class ClienteController {
 		if(byId.isPresent()) {
 			model.addAttribute("cliente", byId.get());
 		}
-		return "/formClienteEdit";
+		return "/cliente/formClienteEdit";
 	}
 	
 

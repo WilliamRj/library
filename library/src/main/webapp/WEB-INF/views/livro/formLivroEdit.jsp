@@ -38,8 +38,8 @@
 		<h3 class="float-md-start mb-0">Livraria PW&nbsp;&nbsp;&nbsp;&nbsp;</h3>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/" class="nav-link px-2 text-white">Início</a></li>
-          <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
-          <li><a href="/livro/cadastro" class="nav-link px-2 text-secondary">Gerenciar Livro</a></li>
+          <li><a href="/cliente/cadastro" class="nav-link px-2 text-secondary">Gerenciar Cliente</a></li>
+          <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Alugar</a></li>
         </ul>
       </div>
@@ -47,6 +47,68 @@
   </header>
 </main>
 
+<div class="container" id="containerInicial">
+
+
+		<h2>Editar o livro: ${livro.titulo_livro}</h2>
+
+		<form action='<c:url value="/livro/salvar" /> ' method="post">
+		
+		<input type="hidden" name="codigo_livro" value="${livro.codigo_livro}" >
+
+			<div class="form-group">
+			
+				<label for="titulo_livro">Título</label> 
+				
+				<input
+					type="text" class="form-control" id="titulo_livro"
+					placeholder="Informe o titulo do livro" name="titulo_livro" value="${livro.titulo_livro}">
+			
+			</div>
+			
+			<div class="form-group">
+			
+				<label for="autor_livro">Autor</label> 
+				
+				<input
+					type="text" class="form-control" id="autor_livro"
+					placeholder="Informe o autor do livro" name="autor_livro" value="${livro.autor_livro}">
+			
+			</div>
+
+			<div class="form-group">
+			
+				<label for="categoria_livro">Categoria</label> 
+				
+				<input
+					type="text" class="form-control" id="categoria_livro"
+					placeholder="Informe a categoria do livro" name="categoria_livro" value="${livro.categoria_livro}">
+			
+			</div>
+			
+			<div class="form-group">
+			
+				<label for="data_publicacao">Data de Publicação</label> 
+				
+				<input
+					type="date" class="form-control" id="data_publicacao"
+					placeholder="Informe a data de publicação" name="data_publicacao" value="${livro.data_publicacao}">
+			
+			</div>
+			
+			<hr>
+			 
+			<input type="submit" class="btn btn-primary" value="Salvar" />
+			
+			<a  class="btn btn-secondary" href='<c:url value="/livro/cadastro/" />' >			
+			  	<i class="fa fa-chevron-circle-left" aria-hidder="true" ></i>			
+				 Voltar
+			 </a>
+
+
+		</form>
+
+	</div>
 
 
 
