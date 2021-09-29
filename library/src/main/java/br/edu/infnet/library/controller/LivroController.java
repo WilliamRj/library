@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import br.edu.infnet.library.model.Autor;
+import br.edu.infnet.library.model.Categoria;
 import br.edu.infnet.library.model.Livro;
 import br.edu.infnet.library.service.AutorService;
+import br.edu.infnet.library.service.CategoriaService;
 import br.edu.infnet.library.service.LivroService;
 
 @Controller
@@ -25,6 +27,9 @@ public class LivroController {
 	@Autowired
 	private AutorService autorService;
 	
+	@Autowired
+	private CategoriaService categoriaService;
+	
 	@RequestMapping(value="/cadastro", method = RequestMethod.GET)
 	public String listaLivros(Model model) {
 		List<Livro> livros =  livroService.listAll();
@@ -36,6 +41,8 @@ public class LivroController {
 	public String cadastroFormL(Model model) {
 	List<Autor> autores =  autorService.listAll();
 	model.addAttribute("autores", autores);
+	List<Categoria> categorias =  categoriaService.listAll();
+	model.addAttribute("categorias", categorias);
 		return "/livro/formLivro";
 	}
 
@@ -55,6 +62,8 @@ public class LivroController {
 			model.addAttribute("livro", byId.get());
 			List<Autor> autores =  autorService.listAll();
 			model.addAttribute("autores", autores);
+			List<Categoria> categorias =  categoriaService.listAll();
+			model.addAttribute("categorias", categorias);
 		}
 		return "/livro/formLivroEdit";
 	}

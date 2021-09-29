@@ -39,9 +39,9 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/" class="nav-link px-2 text-white">Início</a></li>
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
-          <li><a href="/livro/cadastro" class="nav-link px-2 text-secondary">Gerenciar Livro</a></li>
-          <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
-          <li><a href="/categoria/cadastro" class="nav-link px-2 text-white">Gerenciar Categoria</a></li>
+          <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
+          <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
+          <li><a href="/categoria/cadastro" class="nav-link px-2 text-secondary">Gerenciar Categoria</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Alugar</a></li>
         </ul>
       </div>
@@ -51,52 +51,35 @@
 
 <div class="container" id="containerInicial">
 
-		<div class="d-flex justify-content-between">
-			<h1>Lista de Livros</h1>
-			<div class="d-flex justify-content-end">
-				<h3>
-					<a class="btn btn-primary" href='<c:url value="/livro/cadastro/formL" /> ' > Cadastrar livro</a>
-				</h3>
+
+		<h2>Editar a categoria: ${categoria.nome}</h2>
+
+		<form action='<c:url value="/categoria/salvar" /> ' method="post">
+		
+		<input type="hidden" name="codigo_categoria" value="${categoria.codigo_categoria}" >
+
+			<div class="form-group">
+			
+				<label for="nome">Nome</label> 
+				
+				<input
+					type="text" class="form-control" id="nome"
+					placeholder="Informe o nome da categoria" name="nome" value="${categoria.nome}" required>
+			
 			</div>
-		</div>
+			
+			<hr>
+			 
+			<input type="submit" class="btn btn-primary" value="Salvar" />
+			
+			<a  class="btn btn-secondary" href='<c:url value="/categoria/cadastro/" />' >			
+			  	<i class="fa fa-chevron-circle-left" aria-hidder="true" ></i>			
+				 Voltar
+			 </a>
 
-		<table class="table table-striped">
 
-			<thead>
-				<tr>
-					<th>Código</th>
-					<th>Titulo</th>
-					<th>Autor</th>
-					<th>Categoria</th>
-					<th>Publicado</th>
-					<th>#</th>
-				</tr>
+		</form>
 
-			</thead>
-
-			<tbody>
-			  	 <c:forEach var="livro" items="${livros}" >   
-						<tr>
-							<td> ${livro.codigo_livro}  </td>
-							<td>${livro.titulo_livro}</td>
-							<td>${livro.autor_livro}</td>
-							<td>${livro.categoria_livro}</td>
-							<td>${livro.data_publicacao}</td>
-							<td>
-							
-							<a href='<c:url value="/livro/cadastro/edit/${livro.codigo_livro}" />' >
-							    <button class="btn btn-primary" type="button" >Editar</button>
-							</a> 
-							
-							<a href='<c:url value="/livro/cadastro/delete/${livro.codigo_livro}" />' >
-							    <button class="btn btn-danger" type="button" >Excluir</button>
-							</a>
-							
-							</td>
-						</tr>
-				</c:forEach>
-			</tbody>
-		</table>
 	</div>
 
 

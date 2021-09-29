@@ -41,6 +41,7 @@
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-secondary">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
           <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
+          <li><a href="/categoria/cadastro" class="nav-link px-2 text-white">Gerenciar Categoria</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Alugar</a></li>
         </ul>
       </div>
@@ -90,6 +91,7 @@
   			 
   			 </div>
 			
+			<!--  Colocado Dropdown de acordo com Categoria Cadastrada
 			<div class="form-group">
 			
 				<label for="categoria_livro">Categoria</label> 
@@ -97,6 +99,20 @@
 				<input
 					type="text" class="form-control" id="categoria_livro"
 					placeholder="Informe a categoria do livro" name="categoria_livro" required>
+			
+			</div>
+			-->
+			
+			<div class="form-group">
+			
+				<label for="categoria_livro">Categoria</label> 
+				
+			<select id="categoria_livro" class="form-control" name="categoria_livro" required>
+    			<option value=""></option>
+    			<c:forEach var="categoria" items="${categorias}" > 
+    				<option value="${categoria.nome}">${categoria.nome}</option>
+    			</c:forEach>
+  			 </select>
 			
 			</div>
 
