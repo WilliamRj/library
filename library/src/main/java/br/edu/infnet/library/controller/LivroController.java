@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import br.edu.infnet.library.model.Autor;
 import br.edu.infnet.library.model.Livro;
+import br.edu.infnet.library.service.AutorService;
 import br.edu.infnet.library.service.LivroService;
 
 @Controller
@@ -20,6 +22,9 @@ public class LivroController {
 	@Autowired
 	private LivroService livroService;
 	
+	@Autowired
+	private AutorService autorService;
+	
 	@RequestMapping(value="/cadastro", method = RequestMethod.GET)
 	public String listaLivros(Model model) {
 		List<Livro> livros =  livroService.listAll();
@@ -28,18 +33,10 @@ public class LivroController {
 	}
 	
 	@RequestMapping(value="/cadastro/formL", method = RequestMethod.GET)
-	public String cadastroFormL() {
+	public String cadastroFormL(Model model) {
+	List<Autor> autores =  autorService.listAll();
+	model.addAttribute("autores", autores);
 		return "/livro/formLivro";
-	}
-	
-	@RequestMapping(value="/cadastro/formA", method = RequestMethod.GET)
-	public String cadastroFormA() {
-		return "/livro/formAutor";
-	}
-	
-	@RequestMapping(value="/cadastro/formC", method = RequestMethod.GET)
-	public String cadastroFormC() {
-		return "/livro/formCategoria";
 	}
 
 	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
@@ -56,6 +53,8 @@ public class LivroController {
 		Optional<Livro> byId = livroService.getById(codigo_livro);
 		if(byId.isPresent()) {
 			model.addAttribute("livro", byId.get());
+			List<Autor> autores =  autorService.listAll();
+			model.addAttribute("autores", autores);
 		}
 		return "/livro/formLivroEdit";
 	}

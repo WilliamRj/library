@@ -64,6 +64,7 @@
 			
 			</div>
 			
+			<!--  Colocado Dropdown de acordo com Autor Cadastrado
 			<div class="form-group">
 			
 				<label for="autor_livro">Autor</label> 
@@ -73,6 +74,20 @@
 					placeholder="Informe o autor do livro" name="autor_livro" required>
 			
 			</div>
+			-->
+			
+			<div class="form-group">
+			
+				<label for="autor_livro">Autor</label> 
+				
+			<select id="autor_livro" class="form-control" name="autor_livro" required>
+    			<option value=""></option>
+    			<c:forEach var="autor" items="${autores}" > 
+    				<option value="${autor.nome} ${autor.sobrenome}">${autor.nome} ${autor.sobrenome}</option>
+    			</c:forEach>
+  			 </select>
+  			 
+  			 </div>
 			
 			<div class="form-group">
 			
