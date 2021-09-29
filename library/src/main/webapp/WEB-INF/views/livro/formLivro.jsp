@@ -40,6 +40,7 @@
           <li><a href="/" class="nav-link px-2 text-white">Início</a></li>
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-secondary">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
+          <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Alugar</a></li>
         </ul>
       </div>

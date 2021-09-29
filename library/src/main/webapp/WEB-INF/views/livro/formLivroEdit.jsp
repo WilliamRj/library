@@ -38,8 +38,9 @@
 		<h3 class="float-md-start mb-0">Livraria PW&nbsp;&nbsp;&nbsp;&nbsp;</h3>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="/" class="nav-link px-2 text-white">Início</a></li>
-          <li><a href="/cliente/cadastro" class="nav-link px-2 text-secondary">Gerenciar Cliente</a></li>
-          <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
+          <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
+          <li><a href="/livro/cadastro" class="nav-link px-2 text-secondary">Gerenciar Livro</a></li>
+          <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Alugar</a></li>
         </ul>
       </div>
@@ -84,8 +85,12 @@
 				
 			<select id="autor_livro" class="form-control" name="autor_livro" required>
     			<option value="${livro.autor_livro}">${livro.autor_livro}</option>
-    			<c:forEach var="autor" items="${autores}" > 
-    				<option value="${autor.nome} ${autor.sobrenome}">${autor.nome} ${autor.sobrenome}</option>
+    			<c:forEach var="autor" items="${autores}" >
+    				<c:set var = "Autoraux1" value = "${livro.autor_livro}"/>
+    				<c:set var = "Autoraux2" value = "${autor.nome} ${autor.sobrenome}"/>
+    				<c:if test="${Autoraux1 != Autoraux2}"> 
+    					<option value="${autor.nome} ${autor.sobrenome}">${autor.nome} ${autor.sobrenome}</option>
+    				</c:if>
     			</c:forEach>
   			 </select>
   			 
