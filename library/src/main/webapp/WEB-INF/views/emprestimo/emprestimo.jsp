@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -9,7 +9,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -37,12 +37,12 @@
           <svg class="bi bi-book" width="40" height="32" role="img" fill="currentColor"><use xlink:href="#icone"/></svg>
 		<h3 class="float-md-start mb-0">Livraria PW&nbsp;&nbsp;&nbsp;&nbsp;</h3>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-2 text-white">InÃ­cio</a></li>
+          <li><a href="/" class="nav-link px-2 text-white">Início</a></li>
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
-          <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
-          <li><a href="/categoria/cadastro" class="nav-link px-2 text-secondary">Gerenciar Categoria</a></li>
-          <li><a href="/emprestimo/cadastro" class="nav-link px-2 text-white">Alugar</a></li>
+          <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
+          <li><a href="/categoria/cadastro" class="nav-link px-2 text-white">Gerenciar Categoria</a></li>
+          <li><a href="/emprestimo/cadastro" class="nav-link px-2 text-secondary">Alugar</a></li>
         </ul>
       </div>
     </div>
@@ -51,35 +51,56 @@
 
 <div class="container" id="containerInicial">
 
-
-		<h2>Editar a categoria: ${categoria.nome}</h2>
-
-		<form action='<c:url value="/categoria/salvar" /> ' method="post">
-		
-		<input type="hidden" name="codigo_categoria" value="${categoria.codigo_categoria}" >
-
-			<div class="form-group">
-			
-				<label for="nome">Nome</label> 
-				
-				<input
-					type="text" class="form-control" id="nome" autofocus="autofocus" 
-					placeholder="Informe o nome da categoria" name="nome" value="${categoria.nome}" required>
-			
+		<div class="d-flex justify-content-between">
+			<h1>Lista de Autores</h1>
+			<div class="d-flex justify-content-end">
+				<h3>
+					<a class="btn btn-primary" href='<c:url value="/emprestimo/cadastro/form" /> ' > Emprestar livro</a>
+				</h3>
 			</div>
-			
-			<hr>
-			 
-			<input type="submit" class="btn btn-primary" value="Salvar" />
-			
-			<a  class="btn btn-secondary" href='<c:url value="/categoria/cadastro/" />' >			
-			  	<i class="fa fa-chevron-circle-left" aria-hidder="true" ></i>			
-				 Voltar
-			 </a>
+		</div>
 
+		<table class="table table-striped">
 
-		</form>
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Data Inicial Emprestimo</th>
+					<th>Data Final Emprestimo</th>
+					<th>Data Retorno Emprestimo</th>
+					<th>Multa</th>
+					<th>#</th>
+				</tr>
 
+			</thead>
+
+			<tbody>
+			  	 <c:forEach var="emprestimo" items="${emprestimos}" >   
+						<tr>
+							<td> ${emprestimo.codigo_emprestimo}  </td>
+							<td>${emprestimo.dataIniEmprestimo}</td>
+							<td>${emprestimo.dataFimEmprestimo}</td>
+							<td>${emprestimo.dataRetornada}</td>
+							<td>${emprestimo.multa}</td>
+							<td>
+							
+							<a href='<c:url value="/emprestimo/cadastro/devolucao/${emprestimo.codigo_emprestimo}" />' >
+							    <button class="btn btn-primary" type="button" >Devolver</button>
+							</a>
+							
+							<a href='<c:url value="/emprestimo/cadastro/edit/${emprestimo.codigo_emprestimo}" />' >
+							    <button class="btn btn-primary" type="button" >Editar</button>
+							</a> 
+							
+							<a href='<c:url value="/emprestimo/cadastro/delete/${emprestimo.codigo_emprestimo}" />' >
+							    <button class="btn btn-danger" type="button" >Excluir</button>
+							</a>
+							
+							</td>
+						</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
 
 

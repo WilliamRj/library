@@ -42,7 +42,7 @@
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
           <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
           <li><a href="/categoria/cadastro" class="nav-link px-2 text-secondary">Gerenciar Categoria</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Alugar</a></li>
+          <li><a href="/emprestimo/cadastro" class="nav-link px-2 text-white">Alugar</a></li>
         </ul>
       </div>
     </div>

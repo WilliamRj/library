@@ -1,0 +1,76 @@
+package br.edu.infnet.library.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import br.edu.infnet.library.model.Emprestimo;
+import br.edu.infnet.library.service.EmprestimoService;
+
+@Controller
+@RequestMapping(value="/emprestimo")
+public class EmprestimoController {
+	
+	@Autowired
+	private EmprestimoService emprestimoService;
+	
+	@RequestMapping(value="/cadastro", method = RequestMethod.GET)
+	public String listaEmprestimos(Model model) {
+		List<Emprestimo> emprestimos =  emprestimoService.listAll();
+		model.addAttribute("emprestimos", emprestimos);
+		return "/emprestimo/emprestimo";
+	}
+	
+	@RequestMapping(value="/cadastro/form", method = RequestMethod.GET)
+	public String cadastroForm() {
+		return "/emprestimo/formEmprestimo";
+	}
+
+	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
+	public String salvar(Emprestimo emprestimo) {		
+		//executar a ação de salvar
+		emprestimoService.salvar(emprestimo);
+		
+		return "redirect:/emprestimo/cadastro";
+	}
+	
+	@RequestMapping(value = "/salvarD", method = RequestMethod.POST)
+	public String salvarDevolucao(Emprestimo emprestimo) {		
+		//executar a ação de salvar
+		emprestimoService.salvarDevolucao(emprestimo);
+		
+		return "redirect:/emprestimo/cadastro";
+	}
+	
+	@RequestMapping(value = "/cadastro/edit/{codigo_emprestimo}", method = RequestMethod.GET)
+	public String formEdit(@PathVariable("codigo_emprestimo") Integer codigo_emprestimo, Model model) {
+		Optional<Emprestimo> byId = emprestimoService.getById(codigo_emprestimo);
+		if(byId.isPresent()) {
+			model.addAttribute("emprestimo", byId.get());
+		}
+		return "/emprestimo/formEmprestimoEdit";
+	}
+	
+	@RequestMapping(value = "/cadastro/devolucao/{codigo_emprestimo}", method = RequestMethod.GET)
+	public String formDevolucao(@PathVariable("codigo_emprestimo") Integer codigo_emprestimo, Model model) {
+		Optional<Emprestimo> byId = emprestimoService.getById(codigo_emprestimo);
+		if(byId.isPresent()) {
+			model.addAttribute("emprestimo", byId.get());
+		}
+		return "/emprestimo/formEmprestimoDevolucao";
+	}
+	
+
+	@RequestMapping(value = "cadastro/delete/{codigo_emprestimo}", method = RequestMethod.GET)
+	public String delete(@PathVariable("codigo_emprestimo") Integer codigo_emprestimo) {
+		emprestimoService.delete(codigo_emprestimo);
+		return "redirect:/emprestimo/cadastro";
+	}
+
+}

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -9,7 +9,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8">
+<meta charset="ISO-8859-1">
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -37,12 +37,12 @@
           <svg class="bi bi-book" width="40" height="32" role="img" fill="currentColor"><use xlink:href="#icone"/></svg>
 		<h3 class="float-md-start mb-0">Livraria PW&nbsp;&nbsp;&nbsp;&nbsp;</h3>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-2 text-white">InÃ­cio</a></li>
+          <li><a href="/" class="nav-link px-2 text-white">Início</a></li>
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
-          <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
-          <li><a href="/categoria/cadastro" class="nav-link px-2 text-secondary">Gerenciar Categoria</a></li>
-          <li><a href="/emprestimo/cadastro" class="nav-link px-2 text-white">Alugar</a></li>
+          <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
+          <li><a href="/categoria/cadastro" class="nav-link px-2 text-white">Gerenciar Categoria</a></li>
+          <li><a href="/emprestimo/cadastro" class="nav-link px-2 text-secondary">Alugar</a></li>
         </ul>
       </div>
     </div>
@@ -52,19 +52,49 @@
 <div class="container" id="containerInicial">
 
 
-		<h2>Editar a categoria: ${categoria.nome}</h2>
+		<h2>Editar o empréstimo do Livro</h2>
 
-		<form action='<c:url value="/categoria/salvar" /> ' method="post">
+		<form action='<c:url value="/emprestimo/salvar" /> ' method="post">
 		
-		<input type="hidden" name="codigo_categoria" value="${categoria.codigo_categoria}" >
+		<input type="hidden" name="codigo_emprestimo" value="${emprestimo.codigo_emprestimo}" >
 
-			<div class="form-group">
+		<div class="form-group">
 			
-				<label for="nome">Nome</label> 
+				 <label for="dataIniEmprestimo">Data Inicial de Empréstimo</label>  
 				
 				<input
-					type="text" class="form-control" id="nome" autofocus="autofocus" 
-					placeholder="Informe o nome da categoria" name="nome" value="${categoria.nome}" required>
+					type="date" class="form-control" id="dataIniEmprestimo"
+					placeholder="Informe a data inicial de emprestimo" name="dataIniEmprestimo" value="${emprestimo.dataIniEmprestimo}" required>
+			
+			</div>
+			
+			<div class="form-group">
+			
+				<label for="dataFimEmprestimo">Data Final de Empréstimo</label> 
+				
+				<input
+					type="date" class="form-control" id="dataFimEmprestimo"
+					placeholder="Informe a data final de emprestimo" name="dataFimEmprestimo" value="${emprestimo.dataFimEmprestimo}" required>
+			
+			</div>
+			
+			<div class="form-group">
+			
+				<!-- <label for="dataRetornada">Data Retornada do Empréstimo</label> -->
+				
+				<input
+					type="hidden" class="form-control" id="dataRetornada"
+					placeholder="Informe a data de retornada do emprestimo" value="${emprestimo.dataRetornada}" name="dataRetornada">
+			
+			</div>
+			
+			<div class="form-group">
+			
+				<!-- <label for="multa">Multa</label> -->
+				
+				<input
+					type="hidden" class="form-control" id="Multa"
+					placeholder="Informe a multar" name="titulo_livro" value="${emprestimo.multa}">
 			
 			</div>
 			
@@ -72,7 +102,7 @@
 			 
 			<input type="submit" class="btn btn-primary" value="Salvar" />
 			
-			<a  class="btn btn-secondary" href='<c:url value="/categoria/cadastro/" />' >			
+			<a  class="btn btn-secondary" href='<c:url value="/emprestimo/cadastro/" />' >			
 			  	<i class="fa fa-chevron-circle-left" aria-hidder="true" ></i>			
 				 Voltar
 			 </a>
