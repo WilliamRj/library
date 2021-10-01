@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -9,7 +9,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -37,7 +37,7 @@
 		<svg class="bi bi-book" width="40" height="32" role="img" fill="currentColor"><use xlink:href="#icone"/></svg>
 		<h3 class="float-md-start mb-0">Livraria PW&nbsp;&nbsp;&nbsp;&nbsp;</h3>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-2 text-secondary">Início</a></li>
+          <li><a href="/" class="nav-link px-2 text-secondary">InÃ­cio</a></li>
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
           <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
@@ -54,7 +54,7 @@
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">Hello, world!</h1>
-          <p>Esse é o protótipo de um programa de Livraria feito para avaliação do módulo de Persistência e MVC do Bloco D e ministrado pelo professor Veloso. A Pós-graduação de Engenharia de Software é ofereciada pelo Instituto Infnet.</p>
+          <p>Esse Ã© o protÃ³tipo de um programa de Livraria feito para avaliaÃ§Ã£o do mÃ³dulo de PersistÃªncia e MVC do Bloco D e ministrado pelo professor Veloso. A PÃ³s-graduaÃ§Ã£o de Engenharia de Software Ã© ofereciada pelo Instituto Infnet.</p>
           <p><a class="btn btn-primary btn-lg" href="https://www.infnet.edu.br/esti/proposta-mit-em-engenharia-de-software-com-java/" role="button">Saiba mais &raquo;</a></p>      
         </div>
       </div>
@@ -64,17 +64,17 @@
         <div class="row">
           <div class="col-md-4">
             <h2>Java</h2>
-            <p>Java é uma linguagem de programação orientada a objetos desenvolvida na década de 90 por uma equipe de programadores chefiada por James Gosling, na empresa Sun Microsystems. Em 2008 o Java foi adquirido pela empresa Oracle Corporation. </p>
+            <p>Java Ã© uma linguagem de programaÃ§Ã£o orientada a objetos desenvolvida na dÃ©cada de 90 por uma equipe de programadores chefiada por James Gosling, na empresa Sun Microsystems. Em 2008 o Java foi adquirido pela empresa Oracle Corporation. </p>
             <p><a class="btn btn-secondary" href="https://www.java.com/pt-BR/" role="button">Ver detalhes &raquo;</a></p>
           </div>
           <div class="col-md-4">
             <h2>Spring Boot</h2>
-            <p>O Spring Boot é um framework Java open source que tem como objetivo facilitar esse processo em aplicações Java. Consequentemente, ele traz mais agilidade para o processo de desenvolvimento, uma vez que devs conseguem reduzir o tempo gasto com as configurações iniciais. </p>
+            <p>O Spring Boot Ã© um framework Java open source que tem como objetivo facilitar esse processo em aplicaÃ§Ãµes Java. Consequentemente, ele traz mais agilidade para o processo de desenvolvimento, uma vez que devs conseguem reduzir o tempo gasto com as configuraÃ§Ãµes iniciais. </p>
             <p><a class="btn btn-secondary" href="https://spring.io/" role="button">Ver detalhes &raquo;</a></p>
           </div>
           <div class="col-md-4">
             <h2>Bootstrap</h2>
-            <p>Bootstrap é um framework web com código-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicações web usando HTML, CSS e JavaScript, baseado em modelos de design para a tipografia, melhorando a experiência do usuário em um site amigável e responsivo. </p>
+            <p>Bootstrap Ã© um framework web com cÃ³digo-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicaÃ§Ãµes web usando HTML, CSS e JavaScript, baseado em modelos de design para a tipografia, melhorando a experiÃªncia do usuÃ¡rio em um site amigÃ¡vel e responsivo. </p>
             <p><a class="btn btn-secondary" href="https://getbootstrap.com/" role="button">Ver detalhes &raquo;</a></p>
           </div>
         </div>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -9,7 +9,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -37,7 +37,7 @@
           <svg class="bi bi-book" width="40" height="32" role="img" fill="currentColor"><use xlink:href="#icone"/></svg>
 		<h3 class="float-md-start mb-0">Livraria PW&nbsp;&nbsp;&nbsp;&nbsp;</h3>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-2 text-white">Início</a></li>
+          <li><a href="/" class="nav-link px-2 text-white">InÃ­cio</a></li>
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-secondary">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
           <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
@@ -63,18 +63,18 @@
 				<label for="nome">Nome</label> 
 				
 				<input
-					type="text" class="form-control" id="nome"
+					type="text" class="form-control" id="nome" autofocus="autofocus" 
 					placeholder="Informe o nome" name="nome" value="${cliente.nome}" required>
 			
 			</div>
 			
 			<div class="form-group">
 			
-				<label for="endereco">Endereço</label> 
+				<label for="endereco">EndereÃ§o</label> 
 				
 				<input
 					type="text" class="form-control" id="endereco"
-					placeholder="Informe o endereço" name="endereco" value="${cliente.endereco}" required>
+					placeholder="Informe o endereÃ§o" name="endereco" value="${cliente.endereco}" required>
 			
 			</div>
 			
