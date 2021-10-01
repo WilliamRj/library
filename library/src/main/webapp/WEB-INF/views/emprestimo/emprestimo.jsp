@@ -41,8 +41,8 @@
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
           <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
-          <li><a href="/categoria/cadastro" class="nav-link px-2 text-secondary">Gerenciar Categoria</a></li>
-          <li><a href="/emprestimo/cadastro" class="nav-link px-2 text-white">Alugar</a></li>
+          <li><a href="/categoria/cadastro" class="nav-link px-2 text-white">Gerenciar Categoria</a></li>
+          <li><a href="/emprestimo/cadastro" class="nav-link px-2 text-secondary">Alugar</a></li>
         </ul>
       </div>
     </div>
@@ -52,10 +52,10 @@
 <div class="container" id="containerInicial">
 
 		<div class="d-flex justify-content-between">
-			<h1>Lista de Categorias</h1>
+			<h1>Lista de Autores</h1>
 			<div class="d-flex justify-content-end">
 				<h3>
-					<a class="btn btn-primary" href='<c:url value="/categoria/cadastro/formC" /> ' > Cadastrar categoria</a>
+					<a class="btn btn-primary" href='<c:url value="/emprestimo/cadastro/form" /> ' > Emprestar livro</a>
 				</h3>
 			</div>
 		</div>
@@ -65,24 +65,34 @@
 			<thead>
 				<tr>
 					<th>Código</th>
-					<th>Nome</th>
+					<th>Data Inicial Emprestimo</th>
+					<th>Data Final Emprestimo</th>
+					<th>Data Retorno Emprestimo</th>
+					<th>Multa</th>
 					<th>#</th>
 				</tr>
 
 			</thead>
 
 			<tbody>
-			  	 <c:forEach var="categoria" items="${categorias}" >   
+			  	 <c:forEach var="emprestimo" items="${emprestimos}" >   
 						<tr>
-							<td> ${categoria.codigo_categoria}  </td>
-							<td>${categoria.nome}</td>
+							<td> ${emprestimo.codigo_emprestimo}  </td>
+							<td>${emprestimo.dataIniEmprestimo}</td>
+							<td>${emprestimo.dataFimEmprestimo}</td>
+							<td>${emprestimo.dataRetornada}</td>
+							<td>${emprestimo.multa}</td>
 							<td>
 							
-							<a href='<c:url value="/categoria/cadastro/edit/${categoria.codigo_categoria}" />' >
+							<a href='<c:url value="/emprestimo/cadastro/devolucao/${emprestimo.codigo_emprestimo}" />' >
+							    <button class="btn btn-primary" type="button" >Devolver</button>
+							</a>
+							
+							<a href='<c:url value="/emprestimo/cadastro/edit/${emprestimo.codigo_emprestimo}" />' >
 							    <button class="btn btn-primary" type="button" >Editar</button>
 							</a> 
 							
-							<a href='<c:url value="/categoria/cadastro/delete/${categoria.codigo_categoria}" />' >
+							<a href='<c:url value="/emprestimo/cadastro/delete/${emprestimo.codigo_emprestimo}" />' >
 							    <button class="btn btn-danger" type="button" >Excluir</button>
 							</a>
 							

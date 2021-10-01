@@ -41,8 +41,8 @@
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
           <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
-          <li><a href="/categoria/cadastro" class="nav-link px-2 text-secondary">Gerenciar Categoria</a></li>
-          <li><a href="/emprestimo/cadastro" class="nav-link px-2 text-white">Alugar</a></li>
+          <li><a href="/categoria/cadastro" class="nav-link px-2 text-white">Gerenciar Categoria</a></li>
+          <li><a href="/emprestimo/cadastro" class="nav-link px-2 text-secondary">Alugar</a></li>
         </ul>
       </div>
     </div>
@@ -51,46 +51,65 @@
 
 <div class="container" id="containerInicial">
 
-		<div class="d-flex justify-content-between">
-			<h1>Lista de Categorias</h1>
-			<div class="d-flex justify-content-end">
-				<h3>
-					<a class="btn btn-primary" href='<c:url value="/categoria/cadastro/formC" /> ' > Cadastrar categoria</a>
-				</h3>
+
+		<h2>Editar o empréstimo do Livro</h2>
+
+		<form action='<c:url value="/emprestimo/salvar" /> ' method="post">
+		
+		<input type="hidden" name="codigo_emprestimo" value="${emprestimo.codigo_emprestimo}" >
+
+		<div class="form-group">
+			
+				 <label for="dataIniEmprestimo">Data Inicial de Empréstimo</label>  
+				
+				<input
+					type="date" class="form-control" id="dataIniEmprestimo"
+					placeholder="Informe a data inicial de emprestimo" name="dataIniEmprestimo" value="${emprestimo.dataIniEmprestimo}" required>
+			
 			</div>
-		</div>
+			
+			<div class="form-group">
+			
+				<label for="dataFimEmprestimo">Data Final de Empréstimo</label> 
+				
+				<input
+					type="date" class="form-control" id="dataFimEmprestimo"
+					placeholder="Informe a data final de emprestimo" name="dataFimEmprestimo" value="${emprestimo.dataFimEmprestimo}" required>
+			
+			</div>
+			
+			<div class="form-group">
+			
+				<!-- <label for="dataRetornada">Data Retornada do Empréstimo</label> -->
+				
+				<input
+					type="hidden" class="form-control" id="dataRetornada"
+					placeholder="Informe a data de retornada do emprestimo" value="${emprestimo.dataRetornada}" name="dataRetornada">
+			
+			</div>
+			
+			<div class="form-group">
+			
+				<!-- <label for="multa">Multa</label> -->
+				
+				<input
+					type="hidden" class="form-control" id="Multa"
+					placeholder="Informe a multar" name="titulo_livro" value="${emprestimo.multa}">
+			
+			</div>
+			
+			<hr>
+			 
+			<input type="submit" class="btn btn-primary" value="Salvar" />
+			
+			<a  class="btn btn-secondary" href='<c:url value="/emprestimo/cadastro/" />' >			
+			  	<i class="fa fa-chevron-circle-left" aria-hidder="true" ></i>			
+				 Voltar
+			 </a>
 
-		<table class="table table-striped">
 
-			<thead>
-				<tr>
-					<th>Código</th>
-					<th>Nome</th>
-					<th>#</th>
-				</tr>
+		</form>
 
-			</thead>
-
-			<tbody>
-			  	 <c:forEach var="categoria" items="${categorias}" >   
-						<tr>
-							<td> ${categoria.codigo_categoria}  </td>
-							<td>${categoria.nome}</td>
-							<td>
-							
-							<a href='<c:url value="/categoria/cadastro/edit/${categoria.codigo_categoria}" />' >
-							    <button class="btn btn-primary" type="button" >Editar</button>
-							</a> 
-							
-							<a href='<c:url value="/categoria/cadastro/delete/${categoria.codigo_categoria}" />' >
-							    <button class="btn btn-danger" type="button" >Excluir</button>
-							</a>
-							
-							</td>
-						</tr>
-				</c:forEach>
-			</tbody>
-		</table>
 	</div>
 
 
