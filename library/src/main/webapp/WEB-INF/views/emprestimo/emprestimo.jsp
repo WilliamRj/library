@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -9,7 +9,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -37,7 +37,7 @@
           <svg class="bi bi-book" width="40" height="32" role="img" fill="currentColor"><use xlink:href="#icone"/></svg>
 		<h3 class="float-md-start mb-0">Livraria PW&nbsp;&nbsp;&nbsp;&nbsp;</h3>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-2 text-white">InÌcio</a></li>
+          <li><a href="/" class="nav-link px-2 text-white">In√≠cio</a></li>
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
           <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
@@ -52,7 +52,7 @@
 <div class="container" id="containerInicial">
 
 		<div class="d-flex justify-content-between">
-			<h1>Lista de Autores</h1>
+			<h1>Lista de Empr√©stimos</h1>
 			<div class="d-flex justify-content-end">
 				<h3>
 					<a class="btn btn-primary" href='<c:url value="/emprestimo/cadastro/form" /> ' > Emprestar livro</a>
@@ -64,7 +64,7 @@
 
 			<thead>
 				<tr>
-					<th>CÛdigo</th>
+					<th>C√≥digo</th>
 					<th>Data Inicial Emprestimo</th>
 					<th>Data Final Emprestimo</th>
 					<th>Data Retorno Emprestimo</th>

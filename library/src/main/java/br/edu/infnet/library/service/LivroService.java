@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.library.model.Livro;
@@ -22,6 +23,11 @@ public class LivroService {
 	
 	public List<Livro> listAll(){
 		return livroRepository.findAll();
+//		return livroRepository.findAll(Sort.by(Sort.Direction.ASC, "data_publicacao"));
+	}
+
+	public List<Livro> listAllSorted(){
+		return livroRepository.findAllSorted();
 	}
 	
 	public Optional<Livro> getById(Integer codigo_livro) {

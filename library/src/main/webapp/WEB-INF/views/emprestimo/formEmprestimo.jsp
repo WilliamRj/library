@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
@@ -9,7 +9,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
@@ -37,7 +37,7 @@
           <svg class="bi bi-book" width="40" height="32" role="img" fill="currentColor"><use xlink:href="#icone"/></svg>
 		<h3 class="float-md-start mb-0">Livraria PW&nbsp;&nbsp;&nbsp;&nbsp;</h3>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="/" class="nav-link px-2 text-white">Início</a></li>
+          <li><a href="/" class="nav-link px-2 text-white">InÃ­cio</a></li>
           <li><a href="/cliente/cadastro" class="nav-link px-2 text-white">Gerenciar Cliente</a></li>
           <li><a href="/livro/cadastro" class="nav-link px-2 text-white">Gerenciar Livro</a></li>
           <li><a href="/autor/cadastro" class="nav-link px-2 text-white">Gerenciar Autor</a></li>
@@ -52,13 +52,39 @@
 <div class="container" id="containerInicial">
 
 
-		<h2>Cadastrar empréstimo de livro</h2>
+		<h2>Cadastrar emprÃ©stimo de livro</h2>
 
 		<form action='<c:url value="/emprestimo/salvar" /> ' method="post">
 
 			<div class="form-group">
 			
-				<label for="dataIniEmprestimo">Data Inicial de Empréstimo</label> 
+				<label for="codigo_cliente">Cliente</label> 
+			
+				<select id="codigo_cliente" class="form-control" name="codigo_cliente" required>
+					<option value=""></option>
+					<c:forEach var="cliente" items="${clientes}" > 
+						<option value="${cliente.codigo_cliente}">${cliente.nome}</option>
+					</c:forEach>
+				</select>
+		 
+			</div>
+			
+			<div class="form-group">
+			
+				<label for="codigo_livro">Livro</label> 
+			
+				<select id="codigo_livro" class="form-control" name="codigo_livro" required>
+					<option value=""></option>
+					<c:forEach var="livro" items="${livros}" > 
+						<option value="${livro.codigo_livro}">${livro.titulo_livro}</option>
+					</c:forEach>
+				</select>
+			
+			</div>
+		
+			<div class="form-group" style="width:200px">
+			
+				<label for="dataIniEmprestimo">Data Inicial de EmprÃ©stimo</label> 
 				
 				<input
 					type="date" class="form-control" id="dataIniEmprestimo"
@@ -66,9 +92,9 @@
 			
 			</div>
 			
-			<div class="form-group">
+			<div class="form-group" style="width:200px">
 			
-				<label for="dataFimEmprestimo">Data Final de Empréstimo</label> 
+				<label for="dataFimEmprestimo">Data Final de EmprÃ©stimo</label> 
 				
 				<input
 					type="date" class="form-control" id="dataFimEmprestimo"
@@ -78,7 +104,7 @@
 			
 			<div class="form-group">
 			
-				<!-- <label for="dataRetornada">Data Retornada do Empréstimo</label> -->
+				<!-- <label for="dataRetornada">Data Retornada do EmprÃ©stimo</label> -->
 				
 				<input
 					type="hidden" class="form-control" id="dataRetornada"
@@ -92,7 +118,7 @@
 				
 				<input
 					type="hidden" class="form-control" id="Multa"
-					placeholder="Informe a multar" name="titulo_livro">
+					placeholder="Informe a multa" name="titulo_livro">
 			
 			</div>
 			
@@ -114,6 +140,11 @@
 
 <!-- Optional JavaScript; choose one of the two! -->	
 <!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>	
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+<!-- Script do AutoComplete -->
+<script src="bootstrap-autocomplete.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>
+
 </body>
 </html>

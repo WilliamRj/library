@@ -7,12 +7,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.lang.NonNull;
 
 @Entity
 public class Emprestimo {
 
-	@Id @GeneratedValue
+	@Id @GeneratedValue @NonNull
 	private Integer codigo_emprestimo;
+	
+	@NonNull
+	private Integer codigo_livro;
+	
+	@NonNull
+	private Integer codigo_cliente;
 	
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataIniEmprestimo;
@@ -76,6 +83,21 @@ public class Emprestimo {
 	public void setMulta(Double multa) {
 		this.multa = multa;
 	}
-	
-	
+
+	public Integer getCodigo_livro() {
+		return codigo_livro;
+	}
+
+	public void setCodigo_livro(Integer codigo_livro) {
+		this.codigo_livro = codigo_livro;
+	}
+
+	public Integer getCodigo_cliente() {
+		return codigo_cliente;
+	}
+
+	public void setCodigo_cliente(Integer codigo_cliente) {
+		this.codigo_cliente = codigo_cliente;
+	}
+
 }

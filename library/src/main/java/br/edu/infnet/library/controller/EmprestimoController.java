@@ -4,14 +4,21 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import br.edu.infnet.library.model.Autor;
+import br.edu.infnet.library.model.Categoria;
+import br.edu.infnet.library.model.Cliente;
 import br.edu.infnet.library.model.Emprestimo;
+import br.edu.infnet.library.model.Livro;
+import br.edu.infnet.library.service.ClienteService;
 import br.edu.infnet.library.service.EmprestimoService;
+import br.edu.infnet.library.service.LivroService;
 
 @Controller
 @RequestMapping(value="/emprestimo")
@@ -19,6 +26,12 @@ public class EmprestimoController {
 	
 	@Autowired
 	private EmprestimoService emprestimoService;
+	
+	@Autowired
+	private LivroService livroService;
+
+	@Autowired
+	private ClienteService clienteService;
 	
 	@RequestMapping(value="/cadastro", method = RequestMethod.GET)
 	public String listaEmprestimos(Model model) {
@@ -28,7 +41,13 @@ public class EmprestimoController {
 	}
 	
 	@RequestMapping(value="/cadastro/form", method = RequestMethod.GET)
-	public String cadastroForm() {
+	public String cadastroForm(Model model) {
+		List<Livro> livros =  livroService.listAllSorted();
+		List<Cliente> clientes =  clienteService.listAll();
+		model.addAttribute("livros", livros);
+		model.addAttribute("clientes", clientes);
+//		List<Categoria> categorias =  categoriaService.listAll();
+//		model.addAttribute("categorias", categorias);
 		return "/emprestimo/formEmprestimo";
 	}
 

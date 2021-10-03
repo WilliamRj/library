@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.library.model.Cliente;
+import br.edu.infnet.library.model.Livro;
 import br.edu.infnet.library.repository.ClienteRepository;
 
 @Service
@@ -21,7 +23,12 @@ public class ClienteService {
 	}
 	
 	public List<Cliente> listAll(){
-		return clienteRepository.findAll();
+		return clienteRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
+//		return clienteRepository.findAll();
+	}
+	
+	public List<Cliente> listAllSorted(){
+		return clienteRepository.findAllSorted();
 	}
 	
 	public Optional<Cliente> getById(Integer codigo_cliente) {

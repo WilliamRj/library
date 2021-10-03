@@ -126,7 +126,7 @@
 			
 			</div>
 			
-			<div class="form-group">
+			<div class="form-group" style="width:200px">
 			
 				<label for="data_publicacao">Data de Publicação</label> 
 				
