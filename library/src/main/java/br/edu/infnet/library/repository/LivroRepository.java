@@ -10,14 +10,8 @@ import br.edu.infnet.library.model.Livro;
 
 @Repository
 public interface LivroRepository extends JpaRepository<Livro, Integer> {
+	
+	@Query("select L from Livro L left join Emprestimo E on L.codigo_livro = E.codigo_livro WHERE E.codigo_livro IS NULL order by L.tituloLivro ASC")
+	List<Livro> localizarNaoEmprestados();
 
-//	
-//	@Override
-//    public List<Livro> localizarTodos() {
-//        return livro.findAll(sortByTituloLivroAsc());
-//    }
-	
-	@Query("select l from Livro l where 1=1 order by titulo_livro asc")
-	List<Livro> findAllSorted();
-	
 }

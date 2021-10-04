@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.library.model.Autor;
@@ -21,7 +22,7 @@ public class AutorService {
 	}
 	
 	public List<Autor> listAll(){
-		return autorRepository.findAll();
+		return autorRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
 	}
 	
 	public Optional<Autor> getById(Integer codigo_autor) {

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html>
@@ -65,6 +66,8 @@
 			<thead>
 				<tr>
 					<th>Código</th>
+					<th>Cliente</th>
+					<th>Livro</th>
 					<th>Data Inicial Emprestimo</th>
 					<th>Data Final Emprestimo</th>
 					<th>Data Retorno Emprestimo</th>
@@ -75,29 +78,43 @@
 			</thead>
 
 			<tbody>
-			  	 <c:forEach var="emprestimo" items="${emprestimos}" >   
-						<tr>
-							<td> ${emprestimo.codigo_emprestimo}  </td>
-							<td>${emprestimo.dataIniEmprestimo}</td>
-							<td>${emprestimo.dataFimEmprestimo}</td>
-							<td>${emprestimo.dataRetornada}</td>
-							<td>${emprestimo.multa}</td>
-							<td>
-							
+				<c:forEach var="emprestimo" items="${emprestimos}" >
+			  	<c:set var="cod" value = "${emprestimo.codigo_emprestimo}" />
+					<tr>
+						<td>${emprestimo.codigo_emprestimo}</td>
+						<td>
+							<!-- Pega o nome do cliente pelo codigo_cliente (do hashmap criado no emprestioController) -->
+							<c:forEach var="cliente" items="${clientes}" >
+								<c:if test="${cliente.key eq cod}">
+					        		<option><c:out value="${cliente.value}" /></option>
+					        	</c:if>
+					        </c:forEach>
+						</td>
+
+						<td>
+							<!-- Pega o titulo do livro pelo tituloLivro (do hashmap criado no emprestioController) -->
+							<c:forEach var="livro" items="${livros}" >
+								<c:if test="${livro.key eq cod}">
+									<option><c:out value="${livro.value}" /></option>
+								</c:if>
+							</c:forEach>
+						</td>
+						
+						<td>${emprestimo.dataIniEmprestimo}</td>
+						<td>${emprestimo.dataFimEmprestimo}</td>
+						<td>${emprestimo.dataRetornada}</td>
+						<td>${emprestimo.multa}</td>
+						<td>
 							<a href='<c:url value="/emprestimo/cadastro/devolucao/${emprestimo.codigo_emprestimo}" />' >
-							    <button class="btn btn-primary" type="button" >Devolver</button>
-							</a>
-							
+							    <button class="btn btn-primary" type="button" >Devolver</button></a>
+							    
 							<a href='<c:url value="/emprestimo/cadastro/edit/${emprestimo.codigo_emprestimo}" />' >
-							    <button class="btn btn-primary" type="button" >Editar</button>
-							</a> 
-							
+							    <button class="btn btn-primary" type="button" >Editar</button></a>
+								
 							<a href='<c:url value="/emprestimo/cadastro/delete/${emprestimo.codigo_emprestimo}" />' >
-							    <button class="btn btn-danger" type="button" >Excluir</button>
-							</a>
-							
-							</td>
-						</tr>
+							    <button class="btn btn-danger" type="button" >Excluir</button></a>
+						</td>
+					</tr>
 				</c:forEach>
 			</tbody>
 		</table>

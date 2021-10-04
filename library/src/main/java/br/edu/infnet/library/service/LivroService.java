@@ -21,15 +21,15 @@ public class LivroService {
 		return livroRepository.save(livro);
 	}
 	
-	public List<Livro> listAll(){
-		return livroRepository.findAll();
-//		return livroRepository.findAll(Sort.by(Sort.Direction.ASC, "data_publicacao"));
-	}
-
-	public List<Livro> listAllSorted(){
-		return livroRepository.findAllSorted();
+	public List<Livro> buscarNaoEmprestados(){
+		return livroRepository.localizarNaoEmprestados();
 	}
 	
+	public List<Livro> listAll(){
+//		return livroRepository.findAll();
+		return livroRepository.findAll(Sort.by(Sort.Direction.ASC, "tituloLivro"));
+	}
+
 	public Optional<Livro> getById(Integer codigo_livro) {
 		return livroRepository.findById(codigo_livro);
 	}

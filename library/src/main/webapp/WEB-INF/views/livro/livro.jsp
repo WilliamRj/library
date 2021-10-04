@@ -78,8 +78,8 @@
 			  	 <c:forEach var="livro" items="${livros}" >   
 						<tr>
 							<td> ${livro.codigo_livro}  </td>
-							<td>${livro.titulo_livro}</td>
-							<td>${livro.autor_livro}</td>
+							<td>${livro.tituloLivro}</td>
+							<td>${livro.autorLivro}</td>
 							<td>${livro.categoria_livro}</td>
 							<td>${livro.data_publicacao}</td>
 							<td>

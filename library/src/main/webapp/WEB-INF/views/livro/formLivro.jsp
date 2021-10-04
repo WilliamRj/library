@@ -58,31 +58,31 @@
 
 			<div class="form-group">
 			
-				<label for="titulo_livro">Título</label> 
+				<label for="tituloLivro">Título</label> 
 				
 				<input
-					type="text" class="form-control" id="titulo_livro" autofocus="autofocus" 
-					placeholder="Informe o titulo do livro" name="titulo_livro" required>
+					type="text" class="form-control" id="tituloLivro" autofocus="autofocus" 
+					placeholder="Informe o titulo do livro" name="tituloLivro" required>
 			
 			</div>
 			
 			<!--  Colocado Dropdown de acordo com Autor Cadastrado
 			<div class="form-group">
 			
-				<label for="autor_livro">Autor</label> 
+				<label for="autorLivro">Autor</label> 
 				
 				<input
-					type="text" class="form-control" id="autor_livro"
-					placeholder="Informe o autor do livro" name="autor_livro" required>
+					type="text" class="form-control" id="autorLivro"
+					placeholder="Informe o autor do livro" name="autorLivro" required>
 			
 			</div>
 			-->
 			
 			<div class="form-group">
 			
-				<label for="autor_livro">Autor</label> 
+				<label for="autorLivro">Autor</label> 
 				
-			<select id="autor_livro" class="form-control" name="autor_livro" required>
+			<select id="autorLivro" class="form-control" name="autorLivro" required>
     			<option value=""></option>
     			<c:forEach var="autor" items="${autores}" > 
     				<option value="${autor.nome} ${autor.sobrenome}">${autor.nome} ${autor.sobrenome}</option>

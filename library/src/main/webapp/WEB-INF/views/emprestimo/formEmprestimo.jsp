@@ -76,7 +76,7 @@
 				<select id="codigo_livro" class="form-control" name="codigo_livro" required>
 					<option value=""></option>
 					<c:forEach var="livro" items="${livros}" > 
-						<option value="${livro.codigo_livro}">${livro.titulo_livro}</option>
+						<option value="${livro.codigo_livro}">${livro.tituloLivro}</option>
 					</c:forEach>
 				</select>
 			
@@ -118,7 +118,7 @@
 				
 				<input
 					type="hidden" class="form-control" id="Multa"
-					placeholder="Informe a multa" name="titulo_livro">
+					placeholder="Informe a multa" name="tituloLivro">
 			
 			</div>
 			

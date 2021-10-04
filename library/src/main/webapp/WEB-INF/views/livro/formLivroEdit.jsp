@@ -52,7 +52,7 @@
 <div class="container" id="containerInicial">
 
 
-		<h2>Editar o livro: ${livro.titulo_livro}</h2>
+		<h2>Editar o livro: ${livro.tituloLivro}</h2>
 
 		<form action='<c:url value="/livro/salvar" /> ' method="post">
 		
@@ -60,34 +60,34 @@
 
 			<div class="form-group">
 			
-				<label for="titulo_livro">Título</label> 
+				<label for="tituloLivro">Título</label> 
 				
 				<input
-					type="text" class="form-control" id="titulo_livro" autofocus="autofocus" 
-					placeholder="Informe o titulo do livro" name="titulo_livro" value="${livro.titulo_livro}" required>
+					type="text" class="form-control" id="tituloLivro" autofocus="autofocus" 
+					placeholder="Informe o titulo do livro" name="tituloLivro" value="${livro.tituloLivro}" required>
 			
 			</div>
 			
 			<!--  Colocado Dropdown de acordo com Autor Cadastrado
 			<div class="form-group">
 			
-				<label for="autor_livro">Autor</label> 
+				<label for="autorLivro">Autor</label> 
 				
 				<input
-					type="text" class="form-control" id="autor_livro"
-					placeholder="Informe o autor do livro" name="autor_livro" value="${livro.autor_livro}" required>
+					type="text" class="form-control" id="autorLivro"
+					placeholder="Informe o autor do livro" name="autorLivro" value="${livro.autorLivro}" required>
 			
 			</div>
 			-->
 			
 			<div class="form-group">
 			
-				<label for="autor_livro">Autor</label> <br>
+				<label for="autorLivro">Autor</label> <br>
 				
-			<select id="autor_livro" class="form-control" name="autor_livro" required>
-    			<option value="${livro.autor_livro}">${livro.autor_livro}</option>
+			<select id="autorLivro" class="form-control" name="autorLivro" required>
+    			<option value="${livro.autorLivro}">${livro.autorLivro}</option>
     			<c:forEach var="autor" items="${autores}" >
-    				<c:set var = "Autoraux1" value = "${livro.autor_livro}"/>
+    				<c:set var = "Autoraux1" value = "${livro.autorLivro}"/>
     				<c:set var = "Autoraux2" value = "${autor.nome} ${autor.sobrenome}"/>
     				<c:if test="${Autoraux1 != Autoraux2}"> 
     					<option value="${autor.nome} ${autor.sobrenome}">${autor.nome} ${autor.sobrenome}</option>

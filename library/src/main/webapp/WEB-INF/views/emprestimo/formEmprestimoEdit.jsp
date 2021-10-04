@@ -96,7 +96,7 @@
 				
 				<input
 					type="hidden" class="form-control" id="Multa"
-					placeholder="Informe a multa" name="titulo_livro" value="${emprestimo.multa}">
+					placeholder="Informe a multa" name="tituloLivro" value="${emprestimo.multa}">
 			
 			</div>
 			
